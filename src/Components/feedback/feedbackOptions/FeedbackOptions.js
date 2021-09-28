@@ -3,15 +3,11 @@ import React from "react";
 const FeedbackOptions = ({ options, onBtnClick }) => {
   return (
     <div>
-      <button type="button" name="good" onClick={onBtnClick}>
-        Good
-      </button>
-      <button type="button" name="neutral" onClick={onBtnClick}>
-        Neutral
-      </button>
-      <button type="button" name="bad" onClick={onBtnClick}>
-        Bad
-      </button>
+      {options.map((item) => (
+        <button key={item} type="button" name={item} onClick={onBtnClick}>
+          {item}
+        </button>
+      ))}
     </div>
   );
 };
